@@ -1,0 +1,29 @@
+<main class="bg-background text-foreground p-4">
+  <div class="min-h-screen flex flex-col">
+    <app-navbar></app-navbar>
+    <div class="flex-1 flex items-center justify-center pb-24">
+      <div class="w-full mt-12 mx-auto max-w-5xl">
+        <div class="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
+          <div class="flex-1 lg:order-1">
+            <h1 class="text-3xl font-bold mb-4">{{ title }}</h1>
+            <p class="text-muted-foreground mb-4">{{ description }}</p>
+          </div>
+          <div
+            class="flex-shrink-0 lg:order-2 flex justify-center lg:justify-end"
+          >
+            <div class="bg-background p-4 rounded shadow">
+              <img
+                src="https://github.com/keircn.png"
+                class="h-32 w-32 object-cover hidden lg:block"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 lg:order-3">
+          <app-projects></app-projects>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</main>

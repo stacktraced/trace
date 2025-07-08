@@ -1,0 +1,33 @@
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
+  <ng-container *ngFor="let project of projects">
+    <a
+      *ngIf="project.url; else noLink"
+      [href]="project.url"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex flex-col bg-card p-6 rounded-lg border border-border shadow-sm min-h-sm transition-all hover:bg-card/30 hover:shadow-lg cursor-pointer"
+    >
+      <h2 class="text-lg font-bold break-words truncate">
+        {{ project.name || "Untitled Project" }}
+      </h2>
+      <p class="text-muted-foreground mt-2 break-words line-clamp-3">
+        {{ project.description || "No description provided." }}
+      </p>
+    </a>
+    <ng-template #noLink>
+      <div
+        class="flex flex-col bg-card p-6 rounded-lg border border-border shadow-sm min-h-sm transition-all"
+      >
+        <h2 class="text-lg font-bold break-words truncate">
+          {{ project.name || "Untitled Project" }}
+        </h2>
+        <p class="text-muted-foreground mt-2 break-words line-clamp-3">
+          {{ project.description || "No description provided." }}
+        </p>
+        <span class="mt-4 text-sm text-muted-foreground italic"
+          >No link available</span
+        >
+      </div>
+    </ng-template>
+  </ng-container>
+</div>

@@ -1,0 +1,29 @@
+<nav
+  class="fixed top-0 left-0 p-4 w-full flex items-center justify-between z-50"
+>
+  <div class="flex items-center space-x-4 ml-2 my-3">
+    <a class="text-xl font-bold" href="#">{{ title }}</a>
+  </div>
+  <div class="flex items-center space-x-6 mr-2 my-3">
+    <a
+      href="https://github.com/keircn"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-muted-foreground hover:text-primary transition-all"
+    >
+      <lucide-angular
+        [img]="icons.Github"
+        class="w-5 h-5 text-muted-foreground hover:text-primary transition-all"
+      ></lucide-angular>
+    </a>
+    <a
+      href="mailto:keiran@waifu.club"
+      class="text-muted-foreground hover:text-primary transition-all"
+    >
+      <lucide-angular
+        [img]="icons.Mail"
+        class="w-5 h-5 text-muted-foreground hover:text-primary transition-all"
+      ></lucide-angular>
+    </a>
+  </div>
+</nav>

@@ -1,0 +1,3 @@
+name = "trace"
+pages_build_output_dir = "./dist/trace"
+compatibility_date = "2025-07-08"

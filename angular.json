@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "keircn-ng": {
+    "trace": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "keircn-ng:build:production"
+              "buildTarget": "trace:build:production"
             },
             "development": {
-              "buildTarget": "keircn-ng:build:development"
+              "buildTarget": "trace:build:development"
             }
           },
           "defaultConfiguration": "development"

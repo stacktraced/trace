@@ -1,29 +1,47 @@
-<main class="bg-background text-foreground p-4">
+<main class="bg-background text-foreground">
   <div class="min-h-screen flex flex-col">
     <app-navbar></app-navbar>
-    <div class="flex-1 flex items-center justify-center pb-24">
-      <div class="w-full mt-12 mx-auto max-w-5xl">
-        <div class="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
-          <div class="flex-1 lg:order-1">
-            <h1 class="text-3xl font-bold mb-4">{{ title }}</h1>
-            <p class="text-muted-foreground mb-4">{{ description }}</p>
-          </div>
+
+    <div class="flex-1 pt-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
+        <div class="max-w-6xl mx-auto">
           <div
-            class="flex-shrink-0 lg:order-2 flex justify-center lg:justify-end"
+            class="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12 mb-12 lg:mb-16"
           >
-            <div class="bg-background p-4 rounded shadow">
-              <img
-                src="https://github.com/keircn.png"
-                class="h-32 w-32 object-cover hidden lg:block"
-              />
+            <div class="flex-1 order-2 lg:order-1">
+              <h1
+                class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 leading-tight"
+              >
+                {{ title }}
+              </h1>
+              <p
+                class="text-muted-foreground text-lg sm:text-xl leading-relaxed max-w-3xl"
+              >
+                {{ description }}
+              </p>
+            </div>
+
+            <div
+              class="flex-shrink-0 order-1 lg:order-2 flex justify-center lg:justify-end"
+            >
+              <div class="bg-background p-4 rounded-lg shadow-sm">
+                <img
+                  src="https://github.com/stacktraced.png"
+                  alt="Trace's profile picture"
+                  class="h-24 w-24 sm:h-32 sm:w-32 lg:h-64 lg:w-64 object-cover rounded-md"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div class="flex-1 lg:order-3">
-          <app-projects></app-projects>
+
+          <div class="w-full">
+            <app-projects></app-projects>
+          </div>
         </div>
       </div>
     </div>
+
+    <app-footer></app-footer>
   </div>
-  <app-footer></app-footer>
 </main>

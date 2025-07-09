@@ -1,29 +1,55 @@
 <nav
-  class="fixed top-0 left-0 p-4 w-full flex items-center justify-between z-50"
+  class="fixed top-0 left-0 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border z-50"
 >
-  <div class="flex items-center space-x-4 ml-2 my-3">
-    <a class="text-xl font-bold" href="#">{{ title }}</a>
-  </div>
-  <div class="flex items-center space-x-6 mr-2 my-3">
-    <a
-      href="https://github.com/keircn"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text-muted-foreground hover:text-primary transition-all"
-    >
-      <lucide-angular
-        [img]="icons.Github"
-        class="w-5 h-5 text-muted-foreground hover:text-primary transition-all"
-      ></lucide-angular>
-    </a>
-    <a
-      href="mailto:keiran@waifu.club"
-      class="text-muted-foreground hover:text-primary transition-all"
-    >
-      <lucide-angular
-        [img]="icons.Mail"
-        class="w-5 h-5 text-muted-foreground hover:text-primary transition-all"
-      ></lucide-angular>
-    </a>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <a
+          class="text-xl font-bold hover:text-primary transition-colors"
+          href="#"
+          aria-label="Home"
+        >
+          {{ title }}
+        </a>
+      </div>
+
+      <div class="hidden sm:flex items-center space-x-4">
+        <a
+          href="https://github.com/keircn"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 text-muted-foreground hover:text-primary transition-colors rounded-md hover:bg-accent"
+          aria-label="GitHub Profile"
+        >
+          <lucide-angular [img]="icons.Github" class="w-5 h-5"></lucide-angular>
+        </a>
+        <a
+          href="mailto:keiran@waifu.club"
+          class="p-2 text-muted-foreground hover:text-primary transition-colors rounded-md hover:bg-accent"
+          aria-label="Send Email"
+        >
+          <lucide-angular [img]="icons.Mail" class="w-5 h-5"></lucide-angular>
+        </a>
+      </div>
+
+      <div class="sm:hidden flex items-center space-x-2">
+        <a
+          href="https://github.com/keircn"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 text-muted-foreground hover:text-primary transition-colors rounded-md hover:bg-accent"
+          aria-label="GitHub Profile"
+        >
+          <lucide-angular [img]="icons.Github" class="w-4 h-4"></lucide-angular>
+        </a>
+        <a
+          href="mailto:keiran@waifu.club"
+          class="p-2 text-muted-foreground hover:text-primary transition-colors rounded-md hover:bg-accent"
+          aria-label="Send Email"
+        >
+          <lucide-angular [img]="icons.Mail" class="w-4 h-4"></lucide-angular>
+        </a>
+      </div>
+    </div>
   </div>
 </nav>

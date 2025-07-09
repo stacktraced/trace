@@ -1,33 +1,74 @@
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
-  <ng-container *ngFor="let project of projects">
-    <a
-      *ngIf="project.url; else noLink"
-      [href]="project.url"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="flex flex-col bg-card p-6 rounded-lg border border-border shadow-sm min-h-sm transition-all hover:bg-card/30 hover:shadow-lg cursor-pointer"
+<section class="w-full">
+  <div class="mb-8">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-4">Projects</h2>
+    <p
+      class="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-3xl"
     >
-      <h2 class="text-lg font-bold break-words truncate">
-        {{ project.name || "Untitled Project" }}
-      </h2>
-      <p class="text-muted-foreground mt-2 break-words line-clamp-3">
-        {{ project.description || "No description provided." }}
-      </p>
-    </a>
-    <ng-template #noLink>
-      <div
-        class="flex flex-col bg-card p-6 rounded-lg border border-border shadow-sm min-h-sm transition-all"
+      I have worked on a number of projects, both open source and private. Some
+      of these projects are listed below, and you can find more on my GitHub
+      profile.
+    </p>
+  </div>
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6"
+  >
+    <ng-container *ngFor="let project of projects">
+      <a
+        *ngIf="project.url; else noLink"
+        [href]="project.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group flex flex-col bg-card hover:bg-card/80 p-6 rounded-lg border border-border shadow-sm transition-all duration-200 hover:shadow-md hover:border-border/80 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+        [attr.aria-label]="
+          'Visit ' + (project.name || 'Untitled Project') + ' project'
+        "
       >
-        <h2 class="text-lg font-bold break-words truncate">
-          {{ project.name || "Untitled Project" }}
-        </h2>
-        <p class="text-muted-foreground mt-2 break-words line-clamp-3">
+        <div class="flex items-start justify-between mb-3">
+          <h3
+            class="text-lg font-semibold break-words line-clamp-2 group-hover:text-primary transition-colors"
+          >
+            {{ project.name || "Untitled Project" }}
+          </h3>
+          <svg
+            class="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 ml-2 mt-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            ></path>
+          </svg>
+        </div>
+        <p class="text-muted-foreground leading-relaxed line-clamp-4 flex-grow">
           {{ project.description || "No description provided." }}
         </p>
-        <span class="mt-4 text-sm text-muted-foreground italic"
-          >No link available</span
+      </a>
+
+      <ng-template #noLink>
+        <div
+          class="flex flex-col bg-card p-6 rounded-lg border border-border shadow-sm"
         >
-      </div>
-    </ng-template>
-  </ng-container>
-</div>
+          <h3 class="text-lg font-semibold break-words line-clamp-2 mb-3">
+            {{ project.name || "Untitled Project" }}
+          </h3>
+          <p
+            class="text-muted-foreground leading-relaxed line-clamp-4 flex-grow mb-4"
+          >
+            {{ project.description || "No description provided." }}
+          </p>
+          <span
+            class="text-sm text-muted-foreground italic self-start px-2 py-1 bg-muted rounded"
+          >
+            No link available
+          </span>
+        </div>
+      </ng-template>
+    </ng-container>
+  </div>
+</section>
